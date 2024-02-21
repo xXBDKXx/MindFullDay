@@ -46,12 +46,22 @@ class _HomeState extends State<Home> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Olá, (Usuario)',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              )),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.person_rounded, 
+                                color: Colors.white, 
+                                size: 35,
+                              ),
+                              Text('Olá, (Usuario)',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                )
+                              ),
+                            ],
+                          ),
                           SizedBox(
                             height: 8,
                           ),
