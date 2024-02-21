@@ -1,3 +1,4 @@
 # mindfullday_v1
 
-A new Flutter project.
+Um projeto No Flutter Desenvolvido pela Nephytech
+
