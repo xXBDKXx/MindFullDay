@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/util/tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
