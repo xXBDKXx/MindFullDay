@@ -1,16 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mindfullday_v1/cadastro.dart';
-import 'package:mindfullday_v1/homev2.dart';
+import 'package:mindfullday_v1/login_page.dart';
 import 'package:mindfullday_v1/util/textfield.dart';
 
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class Cadastro extends StatelessWidget {
+  Cadastro({super.key});
 
   final nomeController = TextEditingController();
   final senhaController = TextEditingController();
+  final teleController = TextEditingController();
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +34,11 @@ class LoginPage extends StatelessWidget {
                 Column(
                   children: [
                     const Icon(
-                      Icons.lock,
+                      Icons.question_mark,
                       size: 100,
                     ),
                     Text(
-                      'Bem vindo!!',
+                      'Cadastre-se!!',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -59,56 +60,52 @@ class LoginPage extends StatelessWidget {
                 Campotexto(
                     controller: senhaController,
                     hintText: 'Senha',
-                    obscureText: true),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Esqueceu sua senha?',
-                        style: TextStyle(color: Colors.grey[500]),
-                      ),
-                    ],
-                  ),
+                    obscureText: true
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                    );
-                  },
-                  child: Text('Entrar'),
+                Campotexto(
+                    controller: teleController,
+                    hintText: 'Telefone',
+                    obscureText: false
+                  ),
+                SizedBox(
+                  height: 10
                 ),
-                SizedBox(height: 10),
+                Campotexto(
+                    controller: emailController,
+                    hintText: 'Email',
+                    obscureText: false
+                  ),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Não é cadastrado?',
-                      style: TextStyle(color: Colors.grey[500])
-                    ),
-                    const SizedBox(width: 4,),
-                    GestureDetector(
-                      onTap: () {
+                    ElevatedButton(
+                      onPressed: () {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) => Cadastro()),
+                          MaterialPageRoute(builder: (context) => LoginPage()),
                         );
                       },
-                      child: Text(
-                        'Cadastre-se agora!',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      child: Text('Cadastrar'),
+                    ),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: Text('Voltar'),
                     ),
                   ],
                 ),
+                SizedBox(height: 10),
               ],
             ),
           ),

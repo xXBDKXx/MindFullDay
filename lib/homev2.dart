@@ -18,11 +18,15 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.deepPurple,
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outlined), label: 'Adiconar Tarefa'),
+            icon: Icon(Icons.home), label: 'Home'
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month), label: 'Calendario'),
+              icon: Icon(Icons.add_circle_outlined), label: 'Adiconar Tarefa'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month), label: 'Calendario'
+          ),
         ],
       ),
       body: SafeArea(
