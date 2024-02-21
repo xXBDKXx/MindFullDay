@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/util/Tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
+import 'package:mindfullday_v1/util/sideBar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -48,10 +49,11 @@ class _HomeState extends State<Home> {
                         children: [
                           Row(
                             children: [
-                              Icon(
-                                Icons.person_rounded, 
-                                color: Colors.white, 
-                                size: 35,
+                              IconButton(
+                                icon: Icon(Icons.person_rounded, color: Colors.white, size: 35,),
+                                onPressed: () {
+                                 
+                                },
                               ),
                               Text('Olá, (Usuario)',
                                 style: TextStyle(
