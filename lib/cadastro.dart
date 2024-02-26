@@ -16,7 +16,7 @@ class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
+      backgroundColor: Colors.deepPurple,
       body: SafeArea(
         child: Center(
           child: Container(

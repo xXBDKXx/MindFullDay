@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/cadastro.dart';
 import 'package:mindfullday_v1/homev2.dart';
 import 'package:mindfullday_v1/util/textfield.dart';
+
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -15,19 +15,16 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
+      backgroundColor: Colors.deepPurple,
       body: SafeArea(
         child: Center(
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/page-1/images/bg-login.png'),
-                opacity: 0.4,
-                fit: BoxFit.fill,
-
+                fit: BoxFit.cover,
               ),
             ),
-
             child: Column(
               children: [
                 const SizedBox(
@@ -70,8 +67,7 @@ class LoginPage extends StatelessWidget {
                     children: [
                       Text(
                         'Esqueceu sua senha?',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255)),
+                        style: TextStyle(color: Colors.grey[500]),
                       ),
                     ],
                   ),
@@ -87,18 +83,15 @@ class LoginPage extends StatelessWidget {
                     );
                   },
                   child: Text('Entrar'),
-                  
                 ),
                 SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Não é cadastrado?',
-                        style: TextStyle(
-                            color: const Color.fromARGB(255, 255, 255, 255))),
-                    const SizedBox(
-                      width: 4,
+                      style: TextStyle(color: Colors.grey[500])
                     ),
+                    const SizedBox(width: 4,),
                     GestureDetector(
                       onTap: () {
                         Navigator.pushReplacement(
@@ -109,7 +102,7 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Cadastre-se agora!',
                         style: TextStyle(
-                          color: const Color.fromARGB(255, 72, 33, 243),
+                          color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/util/Tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
-import 'package:mindfullday_v1/util/sideBar.dart';
+import 'package:mindfullday_v1/util/navbar.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,7 +17,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
+      backgroundColor: Colors.deepPurple,
+      drawer: NavBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -47,22 +52,12 @@ class _HomeState extends State<Home> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.person_rounded, color: Colors.white, size: 35,),
-                                onPressed: () {
-                                 
-                                },
-                              ),
-                              Text('Olá, (Usuario)',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                )
-                              ),
-                            ],
+                          Text('Olá, (Usuario)',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            )
                           ),
                           SizedBox(
                             height: 8,
