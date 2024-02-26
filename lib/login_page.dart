@@ -15,14 +15,15 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       body: SafeArea(
         child: Center(
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/page-1/images/bg-login.png'),
-                fit: BoxFit.cover,
+                opacity: 0.5,
+                fit: BoxFit.fill,
               ),
             ),
             child: Column(
@@ -67,7 +68,7 @@ class LoginPage extends StatelessWidget {
                     children: [
                       Text(
                         'Esqueceu sua senha?',
-                        style: TextStyle(color: Colors.grey[500]),
+                        style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
                       ),
                     ],
                   ),
@@ -89,7 +90,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Não é cadastrado?',
-                      style: TextStyle(color: Colors.grey[500])
+                      style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))
                     ),
                     const SizedBox(width: 4,),
                     GestureDetector(
@@ -102,7 +103,7 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Cadastre-se agora!',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: const Color.fromARGB(255, 72, 33, 243),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

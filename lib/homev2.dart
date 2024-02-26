@@ -17,10 +17,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
+      
       drawer: NavBar(),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -71,11 +72,12 @@ class _HomeState extends State<Home> {
                       //Notificação
                       Container(
                         decoration: BoxDecoration(
-                            color: Colors.deepPurple[700],
+                            color: Color.fromARGB(0, 255, 255, 255),
                             borderRadius: BorderRadius.circular(12)),
                         padding: EdgeInsets.all(12),
                         child: Icon(
                           Icons.notifications,
+                          size: 35,
                           color: Colors.white,
                         ),
                       ),
@@ -87,8 +89,8 @@ class _HomeState extends State<Home> {
                   //Barra de Busca
                   Container(
                     decoration: BoxDecoration(
-                        color: Colors.deepPurple[400],
-                        borderRadius: BorderRadius.circular(12)),
+                        color: Color.fromARGB(43, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(22)),
                     padding: EdgeInsets.all(12),
                     child: Row(
                       children: [
@@ -114,16 +116,12 @@ class _HomeState extends State<Home> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Como você está se sentindo hoje?',
+                      Text('   Como você está se sentindo hoje?',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           )),
-                      Icon(
-                        Icons.more_horiz,
-                        color: Colors.white,
-                      ),
                     ],
                   ),
                   SizedBox(
@@ -205,7 +203,7 @@ class _HomeState extends State<Home> {
             Expanded(
               child: Container(
               padding: EdgeInsets.all(25),
-              color: Colors.deepPurple[800],
+              color: Color.fromRGBO(73, 66, 228, 1),
               child: Center(
                 child: Column(
                   children: [
@@ -219,10 +217,6 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white),
-                        ),
-                        Icon(
-                          Icons.more_horiz,
-                          color: Colors.white,
                         ),
                       ],
                     ),

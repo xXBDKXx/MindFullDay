@@ -12,7 +12,8 @@ class Emoticons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            decoration:BoxDecoration(color: Colors.deepPurple[700], borderRadius: BorderRadius.circular(12)),
+            decoration:BoxDecoration(color: Color.fromARGB(78, 255, 255, 255),
+            borderRadius: BorderRadius.circular(12)),
             padding: EdgeInsets.all(16),
             child: Center(
               child: Text(
