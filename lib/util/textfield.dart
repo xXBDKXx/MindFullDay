@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
  
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
  
 class Campotexto extends StatelessWidget {
  
@@ -23,15 +24,19 @@ class Campotexto extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.circular(30)
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade400)
+            borderSide: BorderSide(color: Colors.grey.shade400),
+            borderRadius: BorderRadius.circular(30)
           ),
           fillColor: Colors.grey.shade200,
           filled: true,
           hintText: hintText,
+
+
         ),
       ),
     );

@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color.fromARGB(255, 152, 150, 255),
       body: SafeArea(
         child: Center(
            child: Container(
@@ -50,6 +50,7 @@ class LoginPage extends StatelessWidget {
                 controller: nomeController,
                 hintText: 'Nome',
                 obscureText: false,
+
               ),
  
               SizedBox(height: 10,),
@@ -65,10 +66,17 @@ class LoginPage extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => Home()),
-                  );
+                  
+                  ); 
                 },
-                child: Text('Entrar'),
-              )
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:  Color.fromRGBO(73, 66, 228, 100),
+
+                ),
+                child: 
+                Text('Entrar',
+                style: TextStyle(color: Colors.white))
+                ),
             ],
           ),
         ),
