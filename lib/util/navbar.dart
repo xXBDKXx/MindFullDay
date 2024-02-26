@@ -5,7 +5,7 @@ import 'package:mindfullday_v1/login_page.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
-
+  //Drawer
   @override
   Widget build(BuildContext context) {
     return Drawer(
