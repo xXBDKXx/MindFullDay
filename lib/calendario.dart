@@ -64,6 +64,9 @@ class _CalendarioState extends State<Calendario> {
         children: [
           Container(
             child: TableCalendar(
+              headerStyle: 
+                HeaderStyle(formatButtonVisible: false, titleCentered: true),
+                availableGestures: AvailableGestures.all,
               focusedDay: DateTime.now(),
               firstDay: DateTime.now(), 
               lastDay: DateTime.now()
