@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mindfullday_v1/calendario.dart';
 import 'package:mindfullday_v1/util/Tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
 import 'package:mindfullday_v1/util/navbar.dart';
@@ -25,13 +26,40 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home), label: 'Home'
+            icon: IconButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
+              icon: Icon(Icons.home)
+            ), 
+            label: 'Home'
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outlined), label: 'Adiconar Tarefa'
+            icon: IconButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
+              icon: Icon(Icons.add_circle_outline_rounded)
+            ), 
+            label: 'Adicionar Tarefa'
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month), label: 'Calendario'
+            icon: IconButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Calendario()),
+                );
+              },
+              icon: Icon(Icons.calendar_month_outlined)
+            ), 
+            label: 'Calendario'
           ),
         ],
       ),
