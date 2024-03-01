@@ -1,28 +1,30 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+ 
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/cadastro.dart';
 import 'package:mindfullday_v1/homev2.dart';
 import 'package:mindfullday_v1/util/textfield.dart';
-
-
+ 
+ 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
-
+ 
   final nomeController = TextEditingController();
   final senhaController = TextEditingController();
-
+ 
   @override
   Widget build(BuildContext context) {
+    const logo = "assets/page-1/images/logo.png";
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       body: SafeArea(
         child: Center(
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/page-1/images/bg-login.png'),
-                fit: BoxFit.cover,
+                opacity: 0.5,
+                fit: BoxFit.fill,
               ),
             ),
             child: Column(
@@ -32,16 +34,9 @@ class LoginPage extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    const Icon(
-                      Icons.lock,
-                      size: 100,
-                    ),
-                    Text(
-                      'Bem vindo!!',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
+                    const Image(
+                      image: AssetImage(logo),
+                      width: 266,
                     ),
                   ],
                 ),
@@ -59,21 +54,23 @@ class LoginPage extends StatelessWidget {
                 Campotexto(
                     controller: senhaController,
                     hintText: 'Senha',
-                    obscureText: true),
+                    obscureText: true
+                  ),
+                  SizedBox(height: 8),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Esqueceu sua senha?',
-                        style: TextStyle(color: Colors.grey[500]),
+                        style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
                       ),
                     ],
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -89,7 +86,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Não é cadastrado?',
-                      style: TextStyle(color: Colors.grey[500])
+                      style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))
                     ),
                     const SizedBox(width: 4,),
                     GestureDetector(
@@ -102,7 +99,7 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Cadastre-se agora!',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: const Color.fromARGB(255, 72, 33, 243),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

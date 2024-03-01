@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/homev2.dart';
@@ -8,11 +8,20 @@ import 'package:table_calendar/table_calendar.dart';
 class Calendario extends StatefulWidget {
   const Calendario({super.key});
 
+  
+
+
   @override
   State<Calendario> createState() => _CalendarioState();
 }
 
 class _CalendarioState extends State<Calendario> {
+  DateTime today = DateTime.now();
+  void _onDaySelected(DateTime day, DateTime focusedDay) {
+    setState(() {
+      today = day;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,19 +69,26 @@ class _CalendarioState extends State<Calendario> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Container(
-            child: TableCalendar(
-              headerStyle: 
-                HeaderStyle(formatButtonVisible: false, titleCentered: true),
-                availableGestures: AvailableGestures.all,
-              focusedDay: DateTime.now(),
-              firstDay: DateTime.now(), 
-              lastDay: DateTime.now()
-            ),
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Container(
+              child: TableCalendar(
+                locale: 'pt-BR', 
+                headerStyle: 
+                  HeaderStyle(formatButtonVisible: false, titleCentered: true),
+                  availableGestures: AvailableGestures.all,
+                  selectedDayPredicate: (day) =>isSameDay(day, today),
+                focusedDay: today,
+                firstDay: DateTime.utc(2010, 10, 16),
+                lastDay: DateTime.utc(2030, 3, 14),
+                onDaySelected: _onDaySelected,
+                
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
