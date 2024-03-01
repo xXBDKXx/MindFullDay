@@ -15,14 +15,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       drawer: NavBar(),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -233,14 +232,28 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple[800], borderRadius: BorderRadius.only(
+                    topRight:  Radius.circular(30), 
+                    topLeft: Radius.circular(30)
+                  ),
+                  boxShadow: 
+                  [
+                    BoxShadow(
+                      color: Color.fromARGB(43, 51, 51, 51),
+                      blurRadius: 4,
+                      offset: Offset(0, -8),
+                      spreadRadius: -4,
+                    ),
+                  ],
+                ), 
               padding: EdgeInsets.all(25),
-              color: Colors.deepPurple[800],
               child: Center(
                 child: Column(
                   children: [
                     // Heading Tarefas
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Tarefas',
@@ -248,10 +261,6 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white),
-                        ),
-                        Icon(
-                          Icons.more_horiz,
-                          color: Colors.white,
                         ),
                       ],
                     ),
