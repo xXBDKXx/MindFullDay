@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
-                  
+                  /* Image.asset('assets/page-1/images/bg-home.png'), */
                   Opacity(opacity: 0.5),
                   //Olá usuario e notificações
                   Row(
