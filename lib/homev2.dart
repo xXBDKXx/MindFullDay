@@ -1,66 +1,62 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+ 
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/calendario.dart';
 import 'package:mindfullday_v1/util/Tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
 import 'package:mindfullday_v1/util/navbar.dart';
-
-
+ 
 class Home extends StatefulWidget {
   const Home({super.key});
-
+ 
   @override
   State<Home> createState() => _HomeState();
 }
-
+ 
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(134, 150, 254, 1),
+       
       ),
+     
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              icon: Icon(Icons.home)
-            ), 
-            label: 'Home'
-          ),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  icon: Icon(Icons.home)),
+              label: 'Home'),
           BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              icon: Icon(Icons.add_circle_outline_rounded)
-            ), 
-            label: 'Adicionar Tarefa'
-          ),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  icon: Icon(Icons.add_circle_outline_rounded)),
+              label: 'Adicionar Tarefa'),
           BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Calendario()),
-                );
-              },
-              icon: Icon(Icons.calendar_month_outlined)
-            ), 
-            label: 'Calendario'
-          ),
+              icon: IconButton(
+                  onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Calendario()),
+                    ); 
+                  },
+                  icon: Icon(Icons.calendar_month_outlined)),
+              label: 'Calendario'),
         ],
       ),
       body: SafeArea(
@@ -73,20 +69,22 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
+                  
+                  Opacity(opacity: 0.5),
                   //Olá usuario e notificações
                   Row(
+                   
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Olá, (Usuario)',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            )
-                          ),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              )),
                           SizedBox(
                             height: 8,
                           ),
@@ -99,12 +97,15 @@ class _HomeState extends State<Home> {
                       //Notificação
                       Container(
                         decoration: BoxDecoration(
-                            color: Colors.deepPurple[700],
+                            color: const Color.fromARGB(0, 82, 45, 168),
                             borderRadius: BorderRadius.circular(12)),
                         padding: EdgeInsets.all(12),
+                        width: 120,
+                        height: 100,
                         child: Icon(
                           Icons.notifications,
                           color: Colors.white,
+                          size: 50,
                         ),
                       ),
                     ],
@@ -115,7 +116,7 @@ class _HomeState extends State<Home> {
                   //Barra de Busca
                   Container(
                     decoration: BoxDecoration(
-                        color: Colors.deepPurple[400],
+                        color: Color.fromARGB(75, 255, 255, 255),
                         borderRadius: BorderRadius.circular(12)),
                     padding: EdgeInsets.all(12),
                     child: Row(
@@ -137,7 +138,7 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 25,
                   ),
-
+ 
                   //Como você está se sentindo hoje
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -148,16 +149,12 @@ class _HomeState extends State<Home> {
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           )),
-                      Icon(
-                        Icons.more_horiz,
-                        color: Colors.white,
-                      ),
                     ],
                   ),
                   SizedBox(
                     height: 15,
                   ),
-
+ 
                   //Emoções
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -231,22 +228,25 @@ class _HomeState extends State<Home> {
               height: 25,
             ),
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple[800], borderRadius: BorderRadius.only(
-                    topRight:  Radius.circular(30), 
-                    topLeft: Radius.circular(30)
+                child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment(0.00, -1.00),
+                  end: Alignment(0, 2),
+                  colors: [Color.fromARGB(255, 73, 66, 228), Color.fromARGB(0, 73, 66, 228)],
+                ),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(30)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(43, 51, 51, 51),
+                    blurRadius: 4,
+                    offset: Offset(0, -8),
+                    spreadRadius: -5,
                   ),
-                  boxShadow: 
-                  [
-                    BoxShadow(
-                      color: Color.fromARGB(43, 51, 51, 51),
-                      blurRadius: 4,
-                      offset: Offset(0, -8),
-                      spreadRadius: -4,
-                    ),
-                  ],
-                ), 
+                ],
+              ),
               padding: EdgeInsets.all(25),
               child: Center(
                 child: Column(
