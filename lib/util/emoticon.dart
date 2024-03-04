@@ -12,16 +12,16 @@ class Emoticons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            decoration:BoxDecoration(color: Colors.deepPurple[700], borderRadius: BorderRadius.circular(12)),
-            padding: EdgeInsets.all(16),
-            child: Center(
-              child: Text(
-                emoticons,
-                style: TextStyle(
-                  fontSize: 30,
-                ),
-              ),
-            ),
-          );
+      decoration:BoxDecoration(color: Colors.deepPurple[700], borderRadius: BorderRadius.circular(12)),
+      padding: EdgeInsets.all(16),
+      child: Center(
+        child: Text(
+          emoticons,
+          style: TextStyle(
+            fontSize: 30,
+          ),
+        ),
+      ),
+    );
   }
 }

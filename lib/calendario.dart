@@ -44,6 +44,7 @@ class _CalendarioState extends State<Calendario> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,

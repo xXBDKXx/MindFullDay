@@ -30,41 +30,42 @@ class Tarefas extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Row(
-            children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                padding: EdgeInsets.all(16),
-                color: color,
-                child: Icon(
-                  icon,
-                  color: Colors.white,
+            Row(
+              children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  padding: EdgeInsets.all(16),
+                  color: color,
+                  child: Icon(
+                    icon,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              width: 12,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              //Titulo
-              Text(
-                nomeTarefa,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              SizedBox(
+                width: 12,
               ),
-              SizedBox(height: 4,),
-              //Subtitulo
-              Text(
-                descricaoTarefa,
-                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 14),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                //Titulo
+                Text(
+                  nomeTarefa,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                SizedBox(height: 4,),
+                //Subtitulo
+                Text(
+                  descricaoTarefa,
+                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 14),
+                ),],
               ),],
-            ),],
-          ),
-        Icon(Icons.more_horiz)
-      ],),
+            ),
+            Icon(Icons.more_horiz)
+          ],
         ),
+      ),
     );
   }
 }
