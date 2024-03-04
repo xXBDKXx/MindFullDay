@@ -16,6 +16,7 @@ class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.deepPurple,
       body: SafeArea(
         child: Center(
@@ -26,87 +27,89 @@ class Cadastro extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                Column(
-                  children: [
-                    const Icon(
-                      Icons.question_mark,
-                      size: 100,
-                    ),
-                    Text(
-                      'Cadastre-se!!',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
+            child: Expanded(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Column(
+                    children: [
+                      const Icon(
+                        Icons.question_mark,
+                        size: 100,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Campotexto(
-                  controller: nomeController,
-                  hintText: 'Nome',
-                  obscureText: false,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Campotexto(
-                    controller: senhaController,
-                    hintText: 'Senha',
-                    obscureText: true
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Campotexto(
-                    controller: teleController,
-                    hintText: 'Telefone',
-                    obscureText: false
+                      Text(
+                        'Cadastre-se!!',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
-                SizedBox(
-                  height: 10
-                ),
-                Campotexto(
-                    controller: emailController,
-                    hintText: 'Email',
-                    obscureText: false
+                  SizedBox(
+                    height: 50,
                   ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
-                        );
-                      },
-                      child: Text('Cadastrar'),
+                  Campotexto(
+                    controller: nomeController,
+                    hintText: 'Nome',
+                    obscureText: false,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Campotexto(
+                      controller: senhaController,
+                      hintText: 'Senha',
+                      obscureText: true
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Campotexto(
+                      controller: teleController,
+                      hintText: 'Telefone',
+                      obscureText: false
                     ),
-                    SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
-                        );
-                      },
-                      child: Text('Voltar'),
+                  SizedBox(
+                    height: 10
+                  ),
+                  Campotexto(
+                      controller: emailController,
+                      hintText: 'Email',
+                      obscureText: false
                     ),
-                  ],
-                ),
-                SizedBox(height: 10),
-              ],
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Text('Cadastrar'),
+                      ),
+                      SizedBox(width: 10),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Text('Voltar'),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                ],
+              ),
             ),
           ),
         ),

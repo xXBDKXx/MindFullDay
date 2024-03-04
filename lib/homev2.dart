@@ -17,11 +17,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(134, 150, 254, 1),
-       
       ),
      
       bottomNavigationBar: BottomNavigationBar(
