@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MindFullDay',
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(primarySwatch: Colors.amber),
       home: LoginPage(),
     );
   }

@@ -16,7 +16,6 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const logo = "assets/page-1/images/logo.png";
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       body: SafeArea(
         child: Center(
