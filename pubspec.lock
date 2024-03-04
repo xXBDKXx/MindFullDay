@@ -67,7 +67,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
   intl:
     dependency: transitive
     description:
@@ -76,8 +75,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.19.0"
-=======
->>>>>>> 54207c6bca75dc2d944c3d3a6ec6a8c5fb531d74
   leak_tracker:
     dependency: transitive
     description:
@@ -142,7 +139,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
-<<<<<<< HEAD
   simple_gesture_detector:
     dependency: transitive
     description:
@@ -151,8 +147,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1"
-=======
->>>>>>> 54207c6bca75dc2d944c3d3a6ec6a8c5fb531d74
   sky_engine:
     dependency: transitive
     description: flutter
@@ -190,7 +184,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-<<<<<<< HEAD
   table_calendar:
     dependency: "direct main"
     description:
@@ -199,8 +192,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
-=======
->>>>>>> 54207c6bca75dc2d944c3d3a6ec6a8c5fb531d74
   term_glyph:
     dependency: transitive
     description:
@@ -235,7 +226,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.2.3 <4.0.0"
-<<<<<<< HEAD
   flutter: ">=1.17.0"
-=======
->>>>>>> 54207c6bca75dc2d944c3d3a6ec6a8c5fb531d74
