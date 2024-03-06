@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, avoid_print, prefer_final_fields
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, avoid_print, prefer_final_fields, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mindfullday_v1/homev2.dart';
 import 'package:mindfullday_v1/util/event.dart';
 import 'package:mindfullday_v1/util/navbar.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -41,6 +40,7 @@ class _CalendarioState extends State<Calendario> {
   }
   Map<DateTime, List<Evento>> events = {};
   TextEditingController _eventController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,46 +48,6 @@ class _CalendarioState extends State<Calendario> {
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              icon: Icon(Icons.home)
-            ), 
-            label: 'Home'
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              icon: Icon(Icons.add_circle_outline_rounded)
-            ), 
-            label: 'Adicionar Tarefa'
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Calendario()),
-                );
-              },
-              icon: Icon(Icons.calendar_month_outlined)
-            ), 
-            label: 'Calendario'
-          ),
-        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

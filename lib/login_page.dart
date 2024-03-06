@@ -2,7 +2,7 @@
  
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/cadastro.dart';
-import 'package:mindfullday_v1/homev2.dart';
+import 'package:mindfullday_v1/home.dart';
 import 'package:mindfullday_v1/util/textfield.dart';
  
  

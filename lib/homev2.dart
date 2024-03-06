@@ -1,20 +1,19 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mindfullday_v1/calendario.dart';
 import 'package:mindfullday_v1/util/tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
 import 'package:mindfullday_v1/util/navbar.dart';
 
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeUser extends StatefulWidget {
+  const HomeUser({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeUser> createState() => _HomeUserState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeUserState extends State<HomeUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,46 +21,6 @@ class _HomeState extends State<Home> {
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(0, 134, 150, 254),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              icon: Icon(Icons.home)
-            ), 
-            label: 'Home'
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              icon: Icon(Icons.add_circle_outline_rounded)
-            ), 
-            label: 'Adicionar Tarefa'
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Calendario()),
-                );
-              },
-              icon: Icon(Icons.calendar_month_outlined)
-            ), 
-            label: 'Calendario'
-          ),
-        ],
       ),
       body: SafeArea(
         child: Container(
