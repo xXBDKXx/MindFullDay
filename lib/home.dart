@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mindfullday_v1/calendario.dart';
-import 'package:mindfullday_v1/homev2.dart';
+import 'package:mindfullday_v1/paginas/calendario.dart';
+import 'package:mindfullday_v1/paginas/homev2.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

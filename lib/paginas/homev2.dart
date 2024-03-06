@@ -26,7 +26,7 @@ class _HomeUserState extends State<HomeUser> {
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/page-1/images/bg-home.png'),
+                image: AssetImage('assets/imagens/bg-home.png'),
                 opacity: 0.5,
                 fit: BoxFit.fill,
               ),

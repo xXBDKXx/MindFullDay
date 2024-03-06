@@ -25,7 +25,7 @@ class Cadastro extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/page-1/images/bg-login.png'),
+                image: AssetImage('assets/imagens/bg-login.png'),
                 fit: BoxFit.cover,
               ),
             ),

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
  
 import 'package:flutter/material.dart';
-import 'package:mindfullday_v1/cadastro.dart';
+import 'package:mindfullday_v1/paginas/cadastro.dart';
 import 'package:mindfullday_v1/home.dart';
 import 'package:mindfullday_v1/util/textfield.dart';
  
@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    const logo = "assets/page-1/images/logo.png";
+    const logo = "assets/imagens/logo.png";
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
