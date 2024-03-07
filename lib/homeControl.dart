@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/paginas/calendario.dart';
-import 'package:mindfullday_v1/paginas/homev2.dart';
+import 'package:mindfullday_v1/paginas/homeUser.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -15,10 +15,10 @@ class Cadastro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const logo = "assets/imagens/logo.png";
     return Scaffold(
-
+      
       resizeToAvoidBottomInset: false,
-
       backgroundColor: Colors.deepPurple,
       body: SafeArea(
         child: Center(
@@ -36,9 +36,9 @@ class Cadastro extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    const Icon(
-                      Icons.question_mark,
-                      size: 100,
+                    const Image(
+                      image: AssetImage(logo),
+                      width: 266,
                     ),
                     Text(
                       'Cadastre-se!!',

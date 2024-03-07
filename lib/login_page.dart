@@ -2,7 +2,7 @@
  
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/paginas/cadastro.dart';
-import 'package:mindfullday_v1/home.dart';
+import 'package:mindfullday_v1/homeControl.dart';
 import 'package:mindfullday_v1/util/textfield.dart';
  
  
@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/page-1/images/bg-login.png'),
+                image: AssetImage('assets/imagens/bg-login.png'),
                 opacity: 0.5,
                 fit: BoxFit.fill,
               ),
