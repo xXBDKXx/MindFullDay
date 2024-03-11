@@ -20,6 +20,7 @@ class _HomeUserState extends State<HomeUser> {
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
       drawer: NavBar(),
       appBar: AppBar(
+        title: Text("Home"),
         backgroundColor: Color.fromARGB(0, 134, 150, 254),
       ),
       body: SafeArea(

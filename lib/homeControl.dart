@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/paginas/calendario.dart';
 import 'package:mindfullday_v1/paginas/homeUser.dart';
+import 'package:mindfullday_v1/paginas/notas.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
 
   final List<Widget> _pages = [
     HomeUser(),
-    HomeUser(),
+    Notas(),
     Calendario(),
   ];
 

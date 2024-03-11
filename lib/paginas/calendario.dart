@@ -47,6 +47,7 @@ class _CalendarioState extends State<Calendario> {
       resizeToAvoidBottomInset: false,
       drawer: NavBar(),
       appBar: AppBar(
+        title: Text('Calendário'),
         backgroundColor: Colors.deepPurple,
       ),
       floatingActionButton: FloatingActionButton(
