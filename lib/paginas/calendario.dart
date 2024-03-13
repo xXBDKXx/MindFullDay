@@ -40,6 +40,7 @@ class _CalendarioState extends State<Calendario> {
   }
   Map<DateTime, List<Evento>> events = {};
   TextEditingController _eventController = TextEditingController();
+  TextEditingController _descController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +61,25 @@ class _CalendarioState extends State<Calendario> {
                 title: Text('Nome da Tarefa'),
                 content: Padding(
                   padding: EdgeInsets.all(8),
-                  child: TextField(
-                      controller: _eventController,
-                    ),
+                  child: Column(
+                    children: [
+                      TextField(
+                          controller: _eventController,
+                          decoration: InputDecoration(
+                            hintText: "Nome da Tarefa"
+                          ),
+                        ),
+                        TextField(
+                          controller: _descController,
+                          decoration: InputDecoration(
+                            hintText: "Descrição da Tarefa"
+                          ),
+                        ),
+                    ],
+                  ),
+                  
                 ),
+
                 actions: [
                   ElevatedButton(
                     onPressed: () {

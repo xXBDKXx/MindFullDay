@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
                   image: DecorationImage(
                     image: AssetImage('assets/imagens/bg-login.png'),
                     opacity: 0.5,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 child: Column(

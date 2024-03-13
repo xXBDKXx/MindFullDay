@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mindfullday_v1/models/note_model.dart';
 import 'package:mindfullday_v1/util/tarefas.dart';
 import 'package:mindfullday_v1/util/emoticon.dart';
 import 'package:mindfullday_v1/util/navbar.dart';
@@ -126,26 +127,32 @@ class _HomeUserState extends State<HomeUser> {
                     SizedBox(
                       height: 15,
                     ),
-          
                     //Emoções
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        //Triste
+                        // Triste
                         Column(
                           children: [
-                            Emoticons(
-                              emoticons: '😥',
-                            ),
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Image.asset(
+                                'assets/imagens/sad.png',
+                                height: 55,
+                                width: 55,
+                              ),
+                            ), // Image
                             SizedBox(
-                              height: 8,
-                            ),
+                              height: 12,
+                            ), // Sized Box
                             Text(
                               'Triste',
                               style: TextStyle(color: Colors.white),
-                            ),
+                            ), // Text
                           ],
-                        ),
+                        ), // Column
                         //Feliz
                         Column(
                           children: [
@@ -202,7 +209,7 @@ class _HomeUserState extends State<HomeUser> {
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.deepPurple[800], borderRadius: BorderRadius.only(
+                    color: Color.fromARGB(255, 74, 66, 228), borderRadius: BorderRadius.only(
                       topRight:  Radius.circular(30), 
                       topLeft: Radius.circular(30)
                     ),
@@ -269,5 +276,8 @@ class _HomeUserState extends State<HomeUser> {
         ),
       ),
     );
+  }
+  void onNewNoteCreated(Note note){
+    setState(() {});
   }
 }

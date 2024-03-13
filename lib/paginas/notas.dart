@@ -24,7 +24,7 @@ class _NotasState extends State<Notas> {
       drawer: NavBar(),
       appBar: AppBar(
         title: Text('Minhas notas'),
-        backgroundColor: Color.fromARGB(0, 134, 150, 254),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
       ),
       body: ListView.builder(
         itemCount: notes.length,
