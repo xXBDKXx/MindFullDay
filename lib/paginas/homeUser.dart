@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/models/note_model.dart';
 import 'package:mindfullday_v1/util/tarefas.dart';
-import 'package:mindfullday_v1/util/emoticon.dart';
 import 'package:mindfullday_v1/util/navbar.dart';
 
 
@@ -22,7 +21,7 @@ class _HomeUserState extends State<HomeUser> {
       drawer: NavBar(),
       appBar: AppBar(
         title: Text("Home"),
-        backgroundColor: Color.fromARGB(0, 134, 150, 254),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
       ),
       body: SafeArea(
         child: Container(
@@ -156,48 +155,69 @@ class _HomeUserState extends State<HomeUser> {
                         //Feliz
                         Column(
                           children: [
-                            Emoticons(
-                              emoticons: '😁',
-                            ),
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Image.asset(
+                                'assets/imagens/happy.png',
+                                height: 55,
+                                width: 55,
+                              ),
+                            ), // Image
                             SizedBox(
-                              height: 8,
-                            ),
+                              height: 12,
+                            ), // Sized Box
                             Text(
                               'Feliz',
                               style: TextStyle(color: Colors.white),
-                            ),
+                            ), // Text
                           ],
-                        ),
+                        ), 
                         //Pensativo(a)
                         Column(
                           children: [
-                            Emoticons(
-                              emoticons: '🤔',
-                            ),
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Image.asset(
+                                'assets/imagens/shy.png',
+                                height: 55,
+                                width: 55,
+                              ),
+                            ), // Image
                             SizedBox(
-                              height: 8,
-                            ),
+                              height: 12,
+                            ), // Sized Box
                             Text(
-                              'Pensativo(a)',
+                              'Tímido',
                               style: TextStyle(color: Colors.white),
-                            ),
+                            ), // Text
                           ],
-                        ),
+                        ), 
                         //Furioso(a)
                         Column(
                           children: [
-                            Emoticons(
-                              emoticons: '😡',
-                            ),
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Image.asset(
+                                'assets/imagens/angry.png',
+                                height: 55,
+                                width: 55,
+                              ),
+                            ), // Image
                             SizedBox(
-                              height: 8,
-                            ),
+                              height: 12,
+                            ), // Sized Box
                             Text(
-                              'Furioso(a)',
+                              'Nervoso',
                               style: TextStyle(color: Colors.white),
-                            ),
+                            ), // Text
                           ],
-                        ),
+                        ), 
                       ],
                     ),
                   ],

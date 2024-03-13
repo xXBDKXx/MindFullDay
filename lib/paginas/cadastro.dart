@@ -18,7 +18,7 @@ class Cadastro extends StatelessWidget {
     const logo = "assets/imagens/logo.png";
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color.fromRGBO(134, 150, 254, 1),
         body: ListView(
           children: [
             ConstrainedBox(
@@ -32,6 +32,8 @@ class Cadastro extends StatelessWidget {
                   image: DecorationImage(
                     image: AssetImage('assets/imagens/bg-login.png'),
                     fit: BoxFit.cover,
+                    opacity: 0.5,
+                    
                   ),
                 ),
                 child: Center(

@@ -33,3 +33,6 @@ flutter:
     - assets\imagens\bg-home.png
     - assets\imagens\logo.png
     - assets\imagens\sad.png
+    - assets\imagens\angry.png
+    - assets\imagens\happy.png
+    - assets\imagens\shy.png

@@ -49,7 +49,7 @@ class _CalendarioState extends State<Calendario> {
       drawer: NavBar(),
       appBar: AppBar(
         title: Text('Calendário'),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
