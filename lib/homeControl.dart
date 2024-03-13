@@ -6,7 +6,7 @@ import 'package:mindfullday_v1/paginas/homeUser.dart';
 import 'package:mindfullday_v1/paginas/notas.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home( {super.key});
 
   @override
   State<Home> createState() => _HomeState();

@@ -81,10 +81,32 @@ class LoginPage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => Home()),
-                        );
+                        String nome = nomeController.text;
+                        String senha = senhaController.text;
+                        if(nome == 'admin' &&  senha == 'admin'){
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
+                        }
+                        else{
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Erro'),
+                                content: Text('Usuario ou Senha Incorreto!!'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: (){
+                                      Navigator.of(context).pop();
+                                    }, child: Text('Tentar Novamente'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        }
                       },
                       child: Text('Entrar'),
                     ),
