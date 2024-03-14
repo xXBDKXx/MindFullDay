@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
 
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/models/note_model.dart';
+import 'package:mindfullday_v1/paginas/adicionarNotas.dart';
 import 'package:mindfullday_v1/util/tarefas.dart';
-import 'package:mindfullday_v1/util/navbar.dart';
+import 'package:mindfullday_v1/util/sidebar.dart';
 
 
 class HomeUser extends StatefulWidget {
@@ -18,7 +19,7 @@ class _HomeUserState extends State<HomeUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
-      drawer: NavBar(),
+      drawer: SideBar(),
       appBar: AppBar(
         title: Text("Home"),
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -135,7 +136,10 @@ class _HomeUserState extends State<HomeUser> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                	
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AddNotas(onNewNoteCreated: onNewNoteCreated,)),
+                                );
                               },
                               child: Image.asset(
                                 'assets/imagens/sad.png',
@@ -157,7 +161,10 @@ class _HomeUserState extends State<HomeUser> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AddNotas(onNewNoteCreated: onNewNoteCreated,)),
+                                );
                               },
                               child: Image.asset(
                                 'assets/imagens/happy.png',
@@ -179,7 +186,10 @@ class _HomeUserState extends State<HomeUser> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AddNotas(onNewNoteCreated: onNewNoteCreated,)),
+                                );
                               },
                               child: Image.asset(
                                 'assets/imagens/shy.png',
@@ -201,7 +211,10 @@ class _HomeUserState extends State<HomeUser> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AddNotas(onNewNoteCreated: onNewNoteCreated,)),
+                                );
                               },
                               child: Image.asset(
                                 'assets/imagens/angry.png',

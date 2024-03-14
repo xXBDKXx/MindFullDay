@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, avoid_print, prefer_final_fields, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, avoid_print, prefer_final_fields, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/util/event.dart';
-import 'package:mindfullday_v1/util/navbar.dart';
+import 'package:mindfullday_v1/util/sidebar.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendario extends StatefulWidget {
@@ -41,13 +41,15 @@ class _CalendarioState extends State<Calendario> {
   Map<DateTime, List<Evento>> events = {};
   TextEditingController _eventController = TextEditingController();
   TextEditingController _descController = TextEditingController();
+  TextEditingController _entregaController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(134, 150, 254, 1),
-        drawer: NavBar(),
+        drawer: SideBar(),
         appBar: AppBar(
           title: Text('Calendário'),
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -65,17 +67,33 @@ class _CalendarioState extends State<Calendario> {
                     child: Column(
                       children: [
                         TextField(
-                            controller: _eventController,
-                            decoration: InputDecoration(
-                              hintText: "Nome da Tarefa"
+                          controller: _eventController,
+                          decoration: InputDecoration(
+                            hintText: "Nome da Tarefa"
+                          ),
+                        ),
+                        TextField(
+                          controller: _descController,
+                          decoration: InputDecoration(
+                            hintText: "Descrição da Tarefa"
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        TextField(
+                          controller: _entregaController,
+                          decoration: InputDecoration(
+                            labelText: 'Data de entrega',
+                            filled: true,
+                            prefixIcon: Icon(Icons.calendar_today),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none
                             ),
                           ),
-                          TextField(
-                            controller: _descController,
-                            decoration: InputDecoration(
-                              hintText: "Descrição da Tarefa"
-                            ),
-                          ),
+                          readOnly: true,
+                          onTap: () {
+                            _selectDay();
+                          }
+                        )
                       ],
                     ),
                   ),
@@ -162,5 +180,20 @@ class _CalendarioState extends State<Calendario> {
         ),
       ),
     );
+  }
+  Future<void> _selectDay() async {
+    DateTime? _picked = await showDatePicker(
+      context: context, 
+      initialDate: DateTime.now(),
+      firstDate: DateTime.utc(2010, 10, 16),
+      lastDate: DateTime.utc(2030, 3, 14),
+    );
+
+    if (_picked != null) {
+      setState(() {
+        _entregaController.text = _picked.toString().split(" ")[0];
+      });
+    }
+
   }
 }

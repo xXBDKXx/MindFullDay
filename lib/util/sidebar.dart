@@ -1,23 +1,48 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
+
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mindfullday_v1/login_page.dart';
 
-class Sidebar extends StatelessWidget {
-  const Sidebar({super.key});
+class SideBar extends StatelessWidget {
+  const SideBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: Text('John Doe'),
-              accountEmail: Text('john@doe.com'),
-              currentAccountPicture: CircleAvatar(),
-            ),
-          ]
+    return Container(
+      decoration: BoxDecoration(
+        color: Color.fromARGB(118, 8, 4, 27),
+
+      ),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+        child: Drawer(
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text('Nome do Usuario'),
+                accountEmail: Text('Email do Usuario'),
+                currentAccountPicture: CircleAvatar(
+                  child: ClipOval(),
+                ),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Color.fromARGB(255, 125, 63, 240),
+                  backgroundColor: Color.fromARGB(0, 202, 190, 255),
+                  side: BorderSide.none, // This will remove the borders
+                ),
+                child: Text('Logout'),
+              )
+            ],
+          ),
         ),
       ),
     );

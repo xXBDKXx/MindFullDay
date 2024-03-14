@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullday_v1/models/note_model.dart';
 import 'package:mindfullday_v1/paginas/adicionarNotas.dart';
-import 'package:mindfullday_v1/util/navbar.dart';
+import 'package:mindfullday_v1/util/sidebar.dart';
 import 'package:mindfullday_v1/util/note_card.dart';
 
 class Notas extends StatefulWidget {
@@ -21,7 +21,7 @@ class _NotasState extends State<Notas> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(134, 150, 254, 1),
-      drawer: NavBar(),
+      drawer: SideBar(),
       appBar: AppBar(
         title: Text('Minhas notas'),
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
