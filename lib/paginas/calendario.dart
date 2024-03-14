@@ -44,103 +44,121 @@ class _CalendarioState extends State<Calendario> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      drawer: NavBar(),
-      appBar: AppBar(
-        title: Text('Calendário'),
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context, 
-            builder: (context) {
-              return AlertDialog(
-                scrollable: true,
-                title: Text('Nome da Tarefa'),
-                content: Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Column(
-                    children: [
-                      TextField(
-                          controller: _eventController,
-                          decoration: InputDecoration(
-                            hintText: "Nome da Tarefa"
-                          ),
-                        ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(134, 150, 254, 1),
+        drawer: NavBar(),
+        appBar: AppBar(
+          title: Text('Calendário'),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showDialog(
+              context: context, 
+              builder: (context) {
+                return AlertDialog(
+                  scrollable: true,
+                  title: Text('Nome da Tarefa'),
+                  content: Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Column(
+                      children: [
                         TextField(
-                          controller: _descController,
-                          decoration: InputDecoration(
-                            hintText: "Descrição da Tarefa"
+                            controller: _eventController,
+                            decoration: InputDecoration(
+                              hintText: "Nome da Tarefa"
+                            ),
                           ),
-                        ),
-                    ],
+                          TextField(
+                            controller: _descController,
+                            decoration: InputDecoration(
+                              hintText: "Descrição da Tarefa"
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
-                  
-                ),
-
-                actions: [
-                  ElevatedButton(
-                    onPressed: () {
-                      events.addAll({
-                        _selectedDay!: [Evento(_eventController.text)] 
-                      });
-                      Navigator.of(context).pop();
-                      _selectedEvents.value = _getEventsForDay(_selectedDay!);
-                    }, 
-                    child: Text('Criar Tarefa')
+                  actions: [
+                    ElevatedButton(
+                      onPressed: () {
+                        events.addAll({
+                          _selectedDay!: [Evento(_eventController.text)] 
+                        });
+                        Navigator.of(context).pop();
+                        _selectedEvents.value = _getEventsForDay(_selectedDay!);
+                      }, 
+                      child: Text('Criar Tarefa')
+                    ),
+                  ],
+                );
+              },
+            );
+          },
+          child: Icon(Icons.add),
+        ),
+        body: Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/imagens/bg-login.png'),
+                fit: BoxFit.cover,
+                opacity: 0.3,
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  Container(
+                    child: TableCalendar(
+                      locale: 'pt-BR', 
+                      headerStyle: 
+                        HeaderStyle(formatButtonVisible: false, titleCentered: true, titleTextStyle:  TextStyle(color: Colors.white)), 
+                        availableGestures: AvailableGestures.all,
+                        selectedDayPredicate: (day) =>isSameDay(_selectedDay, day),
+                      focusedDay: _focusedDay,
+                      firstDay: DateTime.utc(2010, 10, 16),
+                      lastDay: DateTime.utc(2030, 3, 14),
+                      onDaySelected: _onDaySelected,
+                      eventLoader: _getEventsForDay,
+                      calendarStyle: CalendarStyle(
+                        todayDecoration: BoxDecoration(color: Colors.deepPurple, shape: BoxShape.rectangle),
+                        selectedDecoration: BoxDecoration(color: Colors.deepPurple, shape: BoxShape.circle),
+                        defaultTextStyle:TextStyle(color: Colors.white),
+                        weekNumberTextStyle:TextStyle(color: Colors.pink),
+                        weekendTextStyle:TextStyle(color: Colors.pink),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Expanded(
+                    child: ValueListenableBuilder<List<Evento>>(
+                      valueListenable: _selectedEvents, 
+                      builder: (context, value, _) {
+                        return ListView.builder(
+                          itemCount: value.length,
+                          itemBuilder: (context, index){
+                            return Container(
+                              margin: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                              decoration: BoxDecoration(
+                                border: Border.all(),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: ListTile(
+                                onTap: () => print(""),
+                                title: Text('${value[index]}'),
+                              ),
+                            );
+                          },
+                        );
+                      }
+                    ),
                   ),
                 ],
-              );
-            },
-          );
-        },
-        child: Icon(Icons.add),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Container(
-              child: TableCalendar(
-                locale: 'pt-BR', 
-                headerStyle: 
-                  HeaderStyle(formatButtonVisible: false, titleCentered: true),
-                  availableGestures: AvailableGestures.all,
-                  selectedDayPredicate: (day) =>isSameDay(_selectedDay, day),
-                focusedDay: _focusedDay,
-                firstDay: DateTime.utc(2010, 10, 16),
-                lastDay: DateTime.utc(2030, 3, 14),
-                onDaySelected: _onDaySelected,
-                eventLoader: _getEventsForDay,
               ),
             ),
-            SizedBox(height: 8.0),
-            Expanded(
-              child: ValueListenableBuilder<List<Evento>>(
-                valueListenable: _selectedEvents, 
-                builder: (context, value, _) {
-                  return ListView.builder(
-                    itemCount: value.length,
-                    itemBuilder: (context, index){
-                      return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ListTile(
-                          onTap: () => print(""),
-                          title: Text('${value[index]}'),
-                        ),
-                      );
-                    },
-                  );
-                }
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
